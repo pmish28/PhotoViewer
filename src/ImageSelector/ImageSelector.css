@@ -1,0 +1,9 @@
+.thumbnail {
+    margin: 10px;    
+    max-width: 30%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}

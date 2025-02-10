@@ -3,29 +3,33 @@ import './App.css'
 import { PhotoViewer } from './PhotoViewer/PhotoViewer'
 import './PhotoViewer/PhotoViewer.css'
 import { ImageSelector, imageUrls } from './ImageSelector/ImageSelector'
+import './ImageSelector/ImageSelector.css'
+import { useState } from 'react'
 // import { imageGallery } from './API'
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  const [currentImage, setCurrentImage] = useState("");
+  
+  function handleClick(currentImage: string): void {
+      console.log("I was clicked");
+      setCurrentImage(currentImage);
+  }
   return (
     <>
       <div>
           <h1>React Photo Viewer</h1>
-          <PhotoViewer src ={"https://picsum.photos/seed/picsum/400/300"}/>
+          <PhotoViewer src ={currentImage}/>
       </div>
-      <div>
+      <div className="thumbnailContainer">
       
           {
             imageUrls.map((imageUrl) =>
-              <div>
-                <ImageSelector src={imageUrl} />
-              </div>
+                <ImageSelector click={handleClick} src={imageUrl} />
             )
           }
           
               
-      </div>
+      </div>  
     </>
   )
 }

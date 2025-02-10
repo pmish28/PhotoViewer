@@ -1,12 +1,12 @@
 
-export function ImageSelector(props: { src: string | undefined; })
+export function ImageSelector(props: {
+    click: void | undefined; src: string | undefined; 
+})
 {
     return(
-    <div> 
-        <p>
-        <img src= {props.src}/>  
-        </p>
-    </div>
+        <div className="thumbnail" >
+            <img onClick={props.click} src= {props.src}/>
+        </div>
     );    
 }
 
@@ -24,3 +24,8 @@ function getImageUrls() {
     return urls;
 }
 export const imageUrls = getImageUrls();
+
+// export function handleClick(currentImage): void {
+//     console.log("I was clicked");
+//     setCurrentImage = currentImage;
+// }
