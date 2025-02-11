@@ -25,8 +25,3 @@ function getImageUrls() {
     return urls;
 }
 export const imageUrls = getImageUrls();
-
-// export function handleClick(currentImage): void {
-//     console.log("I was clicked");
-//     setCurrentImage = currentImage;
-// }
