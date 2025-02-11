@@ -1,11 +1,12 @@
+import { MouseEventHandler } from "react";
 
 export function ImageSelector(props: {
-    click: void | undefined; src: string | undefined; 
+    onClick: MouseEventHandler | undefined; src: string | undefined; 
 })
 {
     return(
         <div className="thumbnail" >
-            <img onClick={props.click} src= {props.src}/>
+            <img onClick={props.onClick} src= {props.src}/>
         </div>
     );    
 }

@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import './App.css'
 import { PhotoViewer } from './PhotoViewer/PhotoViewer'
 import './PhotoViewer/PhotoViewer.css'
@@ -10,10 +9,6 @@ import { useState } from 'react'
 function App() {
   const [currentImage, setCurrentImage] = useState("");
   
-  function handleClick(currentImage: string): void {
-      console.log("I was clicked");
-      setCurrentImage(currentImage);
-  }
   return (
     <>
       <div>
@@ -24,7 +19,7 @@ function App() {
       
           {
             imageUrls.map((imageUrl) =>
-                <ImageSelector click={handleClick} src={imageUrl} />
+                <ImageSelector onClick={() => setCurrentImage(imageUrl)} src={imageUrl} />
             )
           }
           
