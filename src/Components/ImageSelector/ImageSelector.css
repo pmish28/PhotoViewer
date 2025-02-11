@@ -15,7 +15,7 @@ img {
 }
 
 .activeThumbnail{
-    border: 5px solid blueviolet; 
+    border: 2px solid blueviolet; 
     background-color: rgba(188, 129, 129, 0.5);
 }
 

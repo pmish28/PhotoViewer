@@ -1,5 +1,10 @@
 
 .mainImage{
     max-width: 50%;
-    margin: auto;;
+    margin: auto;
+}
+
+div.mainImage > img {
+    max-width: 100%;
+    border: 10px solid #1A1A1A;
 }
