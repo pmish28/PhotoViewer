@@ -6,4 +6,11 @@
 img {
     display: block;
     max-width: 100%;
+    border: 5px solid #242424;
 }
+
+.activeThumbnail{
+    border: 5px solid blueviolet; 
+    background-color: rgba(188, 129, 129, 0.5); /* Black background with opacity */
+}
+

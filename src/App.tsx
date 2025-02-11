@@ -7,22 +7,27 @@ import { useState } from 'react'
 // import { imageGallery } from './API'
 
 function App() {
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImage, setCurrentImage] = useState({
+    src: '',
+    index: 0,
+  });
   
   return (
     <>
       <div>
           <h1>React Photo Viewer</h1>
-          <PhotoViewer src ={currentImage}/>
+          <PhotoViewer src ={currentImage.src}/>
       </div>
       <div className="thumbnailContainer">
       
           {
-            imageUrls.map((imageUrl) =>
-                <ImageSelector onClick={() => setCurrentImage(imageUrl)} src={imageUrl} />
+            imageUrls.map((src: string, index: number) =>
+                <ImageSelector onClick={() => setCurrentImage({src, index})} src={src} 
+                className={
+                   currentImage.index === index? 'activeThumbnail': ''
+                }/>
             )
           }
-          
               
       </div>  
     </>
