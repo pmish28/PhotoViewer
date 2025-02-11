@@ -1,12 +1,17 @@
 .thumbnail {
+    display: block;
     margin: 10px;    
     max-width: 30%;
+    align-items: center;
+    padding: 5px;
+    background-color: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    border: 5px solid #242424;
+    max-width: 95%;
+    justify-content: center;
+    border: 5px solid #1A1A1A;
+    margin: auto;
 }
 
 .activeThumbnail{
