@@ -1,33 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { PhotoViewer } from './Components/PhotoViewer/PhotoViewer'
+import './Components/PhotoViewer/PhotoViewer.css'
+import { ImageSelector, imageUrls } from './Components/ImageSelector/ImageSelector'
+import './Components/ImageSelector/ImageSelector.css'
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [currentImage, setCurrentImage] = useState({
+    src: imageUrls[0],
+    index: 0,
+  });
+  
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+          <h1>React PhotoViewer</h1>
+          <PhotoViewer src ={currentImage.src}/>
+        <p>Click on an image below to display it in a large size.</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div className="thumbnailContainer">
+          {
+            imageUrls.map((src: string, index: number) =>
+                <ImageSelector onClick={() => setCurrentImage({src, index})} src={src} 
+                  className={
+                    currentImage.index === index? 'activeThumbnail': ''
+                  }
+                />
+            )
+          }
+      </div>  
     </>
   )
 }
