@@ -8,3 +8,7 @@ div.mainImage > img {
     max-width: 100%;
     border: 10px solid #1A1A1A;
 }
+
+p {
+    text-align: center;
+}
