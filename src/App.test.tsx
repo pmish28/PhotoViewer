@@ -5,8 +5,6 @@ import { imageUrls } from './Utils/imageUrls'
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 
-// const images = ["https://picsum.photos/id/16/2500/1667.jpg", "https://picsum.photos/id/20/3670/2462.jpg","https://picsum.photos/id/10/2500/1667.jpg"]
-  
 test('Displayed image url to match url of clicked thumbnail', async () => {
   const user = userEvent.setup();
   render(<App />);
@@ -15,7 +13,6 @@ test('Displayed image url to match url of clicked thumbnail', async () => {
   const images = screen.getAllByRole('img');
   await user.click(images[3]);
   const clickedTextElement = screen.getByRole('paragraph');
-  // expect(clickedTextElement).getAttribute('src').toBe('Image url: https://picsum.photos/id/603/1600/900.jpg')
   expect(clickedTextElement).toHaveTextContent('Image url: https://picsum.photos/id/603/1600/900.jpg')
 });
 
@@ -26,7 +23,7 @@ test('src contains correct value', () => {
   expect(testImage.src).not.toContain("https://picsum.photos/id/601/1600/900.jpg");
 })
 
-test.only('No broken images in ImageUrls list', () => {
+test('No broken images in ImageUrls list', () => {
   const brokenImages = [1, 24, 32, 36, 44, 47];
   const brokenImageUrls = [] as string[];
   brokenImages.forEach((number) => {
