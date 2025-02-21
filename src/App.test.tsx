@@ -37,18 +37,3 @@ test('No broken images in ImageUrls list', () => {
     expect(brokenImageUrls).not.toContain(imageSrc);
   })
   });
-
-
-// describe('ImageSelector', () => {
-//   it('displays the images provided', () => {
-//     render(<ImageSelector selectedImagUrl="" onClickImage={jest.fn()} imagUrls ={[image1.jpg, images2.jpy]});
-//     const images = screen.getAllByRole('img');
-//   });
-
-//   it('calls onclick function', async => () {
-//     const mockClick = jest.fn();
-//     render<ImageSelector />
-//     await userEvent.click(screen.getAllByRole)
-//     expect
-//   });
-// });
