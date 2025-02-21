@@ -1,16 +1,21 @@
 .thumbnail {
+    display: block;
     margin: 10px;    
     max-width: 30%;
+    align-items: center;
+    padding: 5px;
+    background-color: none;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    border: 5px solid #242424;
+    max-width: 95%;
+    justify-content: center;
+    border: 5px solid #1A1A1A;
+    margin: auto;
 }
 
 .activeThumbnail{
-    border: 5px solid blueviolet; 
+    border: 2px solid blueviolet; 
     background-color: rgba(188, 129, 129, 0.5);
 }
 

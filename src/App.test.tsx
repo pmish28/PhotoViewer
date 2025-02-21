@@ -34,7 +34,6 @@ test('No broken images in ImageUrls list', () => {
   const images = screen.getAllByRole('img');
   images.forEach((image) => {
     const imageSrc = image.getAttribute('src');
-    console.log(imageSrc);
     expect(brokenImageUrls).not.toContain(imageSrc);
   })
   });

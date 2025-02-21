@@ -16,6 +16,7 @@ function App() {
       <div>
           <h1>React PhotoViewer</h1>
           <PhotoViewer src ={currentImage.src}/>
+        <p>Click on an image below to display it in a large size.</p>
       </div>
       <div className="thumbnailContainer">
           {imageUrls.map((src: string, index: number) =>
