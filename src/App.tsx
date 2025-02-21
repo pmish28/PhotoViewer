@@ -3,6 +3,7 @@ import { PhotoViewer } from './Components/PhotoViewer/PhotoViewer';
 import { ImageSelector } from './Components/ImageSelector/ImageSelector';
 import { imageUrls } from './Utils/imageUrls';
 import './Components/ImageSelector/ImageSelector.css';
+import './Components/PhotoViewer/PhotoViewer.css';
 import { useState } from 'react';
 
 function App() {
